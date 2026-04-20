@@ -1,6 +1,8 @@
 # hankyledevteam Player+ (Windows EXE)
 
-Electron-based desktop media player that can be packaged as Windows `.exe`.
+This repository contains the full application source, but the public-facing baseline code is maintained on the `open-source` branch.
+
+> For the open source skeleton and minimal starter implementation, please switch to or clone the `open-source` branch.
 
 ## Requirements
 

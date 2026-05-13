@@ -2690,7 +2690,7 @@ function updateLrcLine() {
 }
 
 function adjustLyricsOffset(delta) {
-  lyricsOffsetSeconds = clamp(lyricsOffsetSeconds + delta, -15, 15);
+  lyricsOffsetSeconds = clamp(lyricsOffsetSeconds + delta, -60, 60);
   if (subOffsetVal) subOffsetVal.textContent = `(${lyricsOffsetSeconds.toFixed(1)}s)`;
   persistLyricsOffsetForCurrentTrack();
   updateLrcLine();
@@ -4109,6 +4109,19 @@ subSyncPlus.addEventListener("click", () => {
   }
   adjustSubtitleOffset(0.5);
 });
+
+const subSync13 = document.getElementById("subSync13");
+if (subSync13) {
+  subSync13.addEventListener("click", () => {
+    if (currentLrcEntries.length > 0) {
+      adjustLyricsOffset(13);
+      showOSD("Lyrics +13s Offset");
+      return;
+    }
+    adjustSubtitleOffset(13);
+    showOSD("Subtitle +13s Offset");
+  });
+}
 
 media.addEventListener("timeupdate", () => {
     if (abActive && timeA !== null && timeB !== null) {
